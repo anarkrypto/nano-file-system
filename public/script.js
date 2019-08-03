@@ -12,7 +12,7 @@ $(function(){
         var requri   = 'api/ipfs-to-nano?hash='+ input;
         var output = "NANO"
       } else {
-        $('#apidata').html("<h2>Error:</h2><p>Invalid input! Use an IPFS hash (starts with Qm) or a Nano Wallet (starts with nano_ or xrb_)</p><p>Examples:<br>Nano wallet: xrb_1tick49ceoduro65za5szjgbwwnhyuzfbucqts4gz1ig9ruza1j4p1hxug1r<br>IPFS Hash: QmUDck4dRXma3WAistFedSRv8X5P1GnhTxKdYQCRBrGMRL</p>");
+        $('#apidata').html("<h2>Error:</h2><p>Invalid input! Use an IPFS hash (starts with Qm) or a Nano Wallet (starts with nano_ or xrb_)</p><p>Examples:<br>Nano wallet: xrb_1otrtnmqkedtx1998kxzmek3poh5hhjj5frmajsj3gixwmrzcauu8a6osxpm<br>IPFS Hash: QmUDck4dRXma3WAistFedSRv8X5P1GnhTxKdYQCRBrGMRL</p>");
         return
       }
     }
