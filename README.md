@@ -1,9 +1,11 @@
 # nano-file-system
-A peer-to-peer filesystem based on Nano and IPFS
+A decentralized and distributed sharing network based on Nano and IPFS
+* PoC version: A interface for converting IPFS hashes to Nano wallets and vice-versa. 
 
-[<h3>Demo Online</h3>](https://nanofilesystem.herokuapp.com/)
 
-Install  all modules listed as dependencies in package.json and run a test
+[<h3>Try this online DEMO</h3>](https://nanofilesystem.herokuapp.com/)
+
+Install  all modules and run the test script
 ```bash
 npm i
 npm test
@@ -23,14 +25,15 @@ npm start
 This project makes it possible to index files within Nano transactions.
 
 <h3>Introduction:</h3>
-<strong>Nano Wallet</strong>In addition to being identified starting with nano_ or xrb_, a Nano wallet is created from blake encoded 32-byte public key (for checksum) and represented in base32. Exemplified as follows:
+<strong>Nano Wallet</strong>
+In addition to being identified starting with nano_ or xrb_, a Nano wallet is created from blake encoded 32-byte public key (for checksum) and represented in base32. Exemplified as follows:
 
 "nano_" + base32 (pubKey) + base32 (blake2b (pubKey))
 
 This means that the opposite process brings your 32-byte public key back.
 
 <h3>Taking advantages:</h3>
-The basic idea of ​​this NanoFileSystem project is that we can create Nano wallets by replacing 32 public customizable bytes, such as messages, intentionally created in place of a public key, which did not necessarily derive from a private key. So while values ​​sent to this wallet cannot be redeemed, it carries a 32-byte message inside that can be read through the decryption process.
+The basic idea of ​​this NanoFileSystem project is that we can create Nano wallets by replacing the public key with 32 "customizable" bytes, such as messages, which did not necessarily derive from a private key. So while values ​​sent to this wallet cannot be redeemed, it carries a 32-byte message inside that can be read through the decryption process.
 If someone sends a value to this wallet, they will be associating it with your transaction history. So it's like sending messages through Nano transactions.
 
 One way to know which wallet has a message behind it would be by sending specific values, as if they were "flags". 
@@ -43,7 +46,8 @@ However, we would still be limited to only 32 bytes per transaction. If we wante
 The purpose of this project is to allow indexing files in Nano, using only 1 transaction per file. As:
 Using the Interplanetary File System (IPFS), a P2P network similar to BitTorrent. We saved the file to IPFS and its hash in transaction Nano!
 
-<strong>IPFS hashes<strong>
+<strong>IPFS hashes</strong>
+
 A common IPFS hash, such as this one, consists of 2 specific identifying bytes at its beginning (0x12, 0x20) + checksum sha256 from file (32bytes), converted to base58.
 
 hex-to-base58 (0x12 + 0x20 + hex (SHA256 (file)))
@@ -58,9 +62,9 @@ Soon we have a Nano wallet, which hashes out any file in IPFS.
 
 <h2> Guide - Installing and Running (node ​​js): </h2>
 
-# First resolve the dependencies (git, npm and nodeJS) 
+First resolve the dependencies (git, npm and nodeJS)
 
-## Debian / Ubuntu:
+### Debian / Ubuntu: ###
 ```bash
   sudo apt update && sudo apt upgrade
 
@@ -80,17 +84,18 @@ npm -v
 git --version
 ```
 
-Installing
+Download this git project and install all modules listed as dependencies in package.json
+  
 
 ```bash
-git clone https://github.com/anarkrypto/upload-files-to-ipfs-from-browser-panel.git
+git clone https://github.com/anarkrypto/nano-file-system.git
 
-cd upload-files-to-ipfs-from-browser-panel
+cd nano-file-system
 
 npm install
 ```
 
-Testing:
+Run the test script:
 ```bash
 npm test
 ```
@@ -110,10 +115,9 @@ Output:
 ```bash
 Server listening on https://localhost:3000
 ```
-So this address in your browser and you're done!
+So you can open this address in your browser.
 
-This is the interface for converting hashes. For now only one PoC.
-
-This project will soon become the basis for a decentralized and distributed sharing network. Wait...
+This is a interface for converting IPFS hashes to Nano wallets and vice-versa. 
+For now only a Proof of Concept. But this project will soon become the basis for a decentralized and distributed sharing network. Wait...
 
 
